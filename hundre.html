@@ -30,6 +30,17 @@ if ( spiller == 2 )		document.getElementById("total2").value = +t2 + +l2;
 
 }
 
+function nullstill(){
+	document.getElementById("total1").value = 0;
+	document.getElementById("total2").value = 0;
+	document.getElementById("runde1").value = 0;
+	document.getElementById("runde2").value = 0;
+	document.getElementById("terning").value = 0;
+	document.getElementById("kaste1").readonly = false;
+	document.getElementById("kaste2").readonly = true;
+	document.getElementById("lagre1").readonly = true;
+	document.getElementById("lagre2").readonly = true;	
+}
 
 </script>
 </head>
