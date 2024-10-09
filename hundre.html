@@ -34,14 +34,14 @@ function kaste(spiller){
 		if (kast > 1) document.getElementById("lagre2").removeAttribute('disabled');
 	}
 
-	sum1 = document.getElementById("runde1").value + document.getElementById("total1").value;
+	sum1 = +document.getElementById("runde1").value + +document.getElementById("total1").value;
 	
 	if (sum1 > 20){
 		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
 		Alert("Spiller 1 har vunnet! Total pluss runde er ");
 	}
 
-	sum2 = document.getElementById("runde2").value + document.getElementById("total2").value;
+	sum2 = +document.getElementById("runde2").value + +document.getElementById("total2").value;
 	
 	if (sum2 > 20){
 		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
