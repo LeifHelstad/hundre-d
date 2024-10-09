@@ -2,9 +2,13 @@
 <head>
 <script>
 function kaste(spiller){
-	kast=Math.floor(Math.random() * 6) + 1 ;
+	kast=Math.floor(Math.random() * 6) + 1;
 	document.getElementById("terning").value = kast;
-	
+
+	if (kast == 1){
+		alert("Auda! Du fikk ener!");
+	}
+		
 
 	r1= document.getElementById("runde1").value;
 	if ( spiller == 1 ) {
