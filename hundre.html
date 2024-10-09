@@ -9,34 +9,29 @@ function kaste(spiller){
 		alert("Auda! Du fikk ener!");
 	}
 		
-
 	r1= document.getElementById("runde1").value;
 	if ( spiller == 1 ) {
 		document.getElementById("runde1").value = +kast + +r1;
 		document.getElementById("lagre1").removeAttribute('disabled');
-	}
-
-	
+	}	
 
 	r2= document.getElementById("runde2").value;
 	if ( spiller == 2 ){
 		document.getElementById("runde2").value = +kast + +r2;
 		document.getElementById("lagre2").removeAttribute('disabled');
-	}
-	
+	}	
 }
 
 function lagre(spiller){
 	l1= document.getElementById("runde1").value;
 	t1= document.getElementById("total1").value;
+	
 	if ( spiller == 1 ){
 		document.getElementById("total1").value = +t1 + +l1;
 		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre1").setAttribute('disabled', 'disabled');
 		document.getElementById("kaste2").removeAttribute('disabled');
 	}
-
-	
 
 	l2= document.getElementById("runde2").value;
 	t2= document.getElementById("total2").value;
