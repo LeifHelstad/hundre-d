@@ -38,16 +38,16 @@ function kaste(spiller){
 
 	sum1 = +document.getElementById("runde1").value + +document.getElementById("total1").value;
 	
-	if (sum1 >= 20){
-		alert('Spiller 1 har vunnet! Total pluss runde er ' + sum1);
+	if (sum1 >= 100){
+		alert('Spiller 1 har vunnet! Spart pluss Runde er ' + sum1);
 		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre1").setAttribute('disabled', 'disabled');	
 	}
 
 	sum2 = +document.getElementById("runde2").value + +document.getElementById("total2").value;
 	
-	if (sum2 >= 20){
-		alert('Spiller 2 har vunnet! Total pluss runde er ' + sum2);
+	if (sum2 >= 100){
+		alert('Spiller 2 har vunnet! Spart pluss Runde er ' + sum2);
 		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre2").setAttribute('disabled', 'disabled');
 	}
@@ -98,22 +98,23 @@ function nullstill(){
 			<fieldset>
 				<Legend>Player 1</Legend>
 				<button id="kaste1" style="height:70px; width:70px" type="button" align=center onclick="kaste(1)">Kast</button>
-				<button id="lagre1" style="height:70px; width:70px" type="button" align=center onclick="lagre(1)">Lagre</button>
+				<button id="lagre1" style="height:70px; width:70px" type="button" align=center onclick="lagre(1)">Spare</button>
 			</fieldset>
 		</td>
 		<td>
 <table align=center border="0">
 	<tr>
 		<td>
+			<label for="total1">Spart</label><br>
 		<input type="text" id="total1" size="3" value=" ">
-			<label for="total1">Total</label><br>
+			
 		</td>
 		<td align=center>
 		<button style="height:70px; width:70px" type="button" align=center onclick="nullstill()">Nullstill</button>
 		</td>
 		<td>
 		<input type="text" id="total2" size="3" value=" ">
-			<label for="total2">Total</label><br>
+			<label for="total2">Spart</label><br>
 		</td>
 	</tr>
 	<tr>
@@ -146,7 +147,7 @@ function nullstill(){
 			<fieldset>
 				<Legend>Player 2</Legend>
 				<button id="kaste2" style="height:70px; width:70px" type="button" align=center onclick="kaste(2)">Kast</button>
-				<button id="lagre2" style="height:70px; width:70px" type="button" align=center onclick="lagre(2)">Lagre</button>
+				<button id="lagre2" style="height:70px; width:70px" type="button" align=center onclick="lagre(2)">Spare</button>
 			</fieldset>
 		</td>
 	</tr>
