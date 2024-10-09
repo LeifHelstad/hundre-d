@@ -1,34 +1,32 @@
 <html>
 <head>
 <script>
-function kast(spiller){
+function kaste(spiller){
 	kast=Math.floor(Math.random() * 6) + 1 ;
 	document.getElementById("terning").value = kast;
 	
 
-		s1= document.getElementById("skade1").value;
-if ( spiller == 1 )		document.getElementById("skade1").value = +kast + +s1;
+		r1= document.getElementById("runde1").value;
+if ( spiller == 1 )		document.getElementById("runde1").value = +kast + +r1;
 
 	
 
-		s2= document.getElementById("skade2").value;
-if ( spiller == 2 )		document.getElementById("skade2").value = +kast + +s2;
+		r2= document.getElementById("runde2").value;
+if ( spiller == 2 )		document.getElementById("runde2").value = +kast + +r2;
 
 	
 }
 
 function lagre(spiller){
-	kast=Math.floor(Math.random() * 6) + 1 ;
-	document.getElementById("terning").value = kast;
-	
-
-		s1= document.getElementById("skade1").value;
-if ( spiller == 1 )		document.getElementById("skade1").value = +kast + +s1;
+		l1= document.getElementById("runde1").value;
+		t1= document.getElementById("total1").value;
+if ( spiller == 1 )		document.getElementById("total1").value = +t1 + +l1;
 
 	
 
-		s2= document.getElementById("skade2").value;
-if ( spiller == 2 )		document.getElementById("skade2").value = +kast + +s2;
+		l2= document.getElementById("runde2").value;
+		t2= document.getElementById("total2").value;
+if ( spiller == 2 )		document.getElementById("total2").value = +t2 + +l2;
 
 	
 }
@@ -38,30 +36,30 @@ if ( spiller == 2 )		document.getElementById("skade2").value = +kast + +s2;
 <table align=center border="2">
 	<tr>
 		<td align=center>
-				<button style="height:70px; width:70px" type="button" align=center onclick="kast(1)">Kast</button>
-				<button style="height:70px; width:70px" type="button" align=center onclick="lagre()">Lagre</button>
+				<button style="height:70px; width:70px" type="button" align=center onclick="kaste(1)">Kast</button>
+				<button style="height:70px; width:70px" type="button" align=center onclick="lagre(1)">Lagre</button>
 		</td>
 		<td>
 <table align=center border="2">
 	<tr>
 		<td>
-		<font size="72" >87</font>
+		<input type="text" id="total1" size="3" value=" ">
 		</td>
 		<td align=center>
 		<button style="height:70px; width:70px">Start spill!"</button>
 		</td>
 		<td>
-		<font size="156">100</font>
+		<input type="text" id="total2" size="3" value=" ">
 		</td>
 	</tr>
 	<tr>
 		<td>
-		<input type="text" id="skade1" size="3" value=" ">
+		<input type="text" id="runde1" size="3" value=" ">
 		</td>
 		<td>
 		</td>
 		<td>
-		<input type="text" id="skade2" size="3" value=" ">
+		<input type="text" id="runde2" size="3" value=" ">
 		</td>
 	</tr>
 	<tr>
@@ -77,8 +75,8 @@ if ( spiller == 2 )		document.getElementById("skade2").value = +kast + +s2;
 		</td>
 		<td align=center>
 			<img src="skann0002.jpg">
-				<button style="height:70px; width:70px" type="button" align=center onclick="kast(2)">Kast</button>
-				<button style="height:70px; width:70px" type="button" align=center onclick="lagre()">Lagre</button>
+				<button style="height:70px; width:70px" type="button" align=center onclick="kaste(2)">Kast</button>
+				<button style="height:70px; width:70px" type="button" align=center onclick="lagre(2)">Lagre</button>
 		</td>
 	</tr>
 </table>
