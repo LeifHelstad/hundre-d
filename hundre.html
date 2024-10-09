@@ -41,6 +41,7 @@ function lagre(spiller){
 	
 	if ( spiller == 1 ){
 		document.getElementById("total1").value = +t1 + +l1;
+		document.getElementById("runde1").value = 0;
 		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre1").setAttribute('disabled', 'disabled');
 		document.getElementById("kaste2").removeAttribute('disabled');
@@ -50,6 +51,7 @@ function lagre(spiller){
 	t2= document.getElementById("total2").value;
 	if ( spiller == 2 ){
 		document.getElementById("total2").value = +t2 + +l2;
+		document.getElementById("runde2").value = 0;
 		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre2").setAttribute('disabled', 'disabled');
 		document.getElementById("kaste1").removeAttribute('disabled');
