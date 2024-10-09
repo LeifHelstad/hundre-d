@@ -25,14 +25,30 @@ function kaste(spiller){
 	r1= document.getElementById("runde1").value;
 	if ( spiller == 1 ) {
 		document.getElementById("runde1").value = +kast + +r1;
-		document.getElementById("lagre1").removeAttribute('disabled');
+		if (kast > 1) document.getElementById("lagre1").removeAttribute('disabled');
 	}	
 
 	r2= document.getElementById("runde2").value;
 	if ( spiller == 2 ){
 		document.getElementById("runde2").value = +kast + +r2;
-		document.getElementById("lagre2").removeAttribute('disabled');
-	}	
+		if (kast > 1) document.getElementById("lagre2").removeAttribute('disabled');
+	}
+
+	sum1 = +document.getElementById("runde1").value + +document.getElementById("total1").value;
+	alert(sum1);
+	
+	if (sum1 > 20){
+		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
+		Alert("Spiller 1 har vunnet! Total pluss runde er ");
+	}
+
+	sum2 = +document.getElementById("runde2").value + +document.getElementById("total2").value;
+	alert(sum2);
+	
+	if (sum2 > 20){
+		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
+		Alert("Spiller 2 har vunnet! Total pluss runde er ");
+	}
 }
 
 function lagre(spiller){
@@ -41,6 +57,7 @@ function lagre(spiller){
 	
 	if ( spiller == 1 ){
 		document.getElementById("total1").value = +t1 + +l1;
+		document.getElementById("runde1").value = 0;
 		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre1").setAttribute('disabled', 'disabled');
 		document.getElementById("kaste2").removeAttribute('disabled');
@@ -50,6 +67,7 @@ function lagre(spiller){
 	t2= document.getElementById("total2").value;
 	if ( spiller == 2 ){
 		document.getElementById("total2").value = +t2 + +l2;
+		document.getElementById("runde2").value = 0;
 		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre2").setAttribute('disabled', 'disabled');
 		document.getElementById("kaste1").removeAttribute('disabled');
@@ -65,7 +83,7 @@ function nullstill(){
 	document.getElementById("runde1").value = 0;
 	document.getElementById("runde2").value = 0;
 	document.getElementById("terning").value = 0;
-	//document.getElementById("kaste1").setAttribute('disabled', 'disabled');
+	document.getElementById("kaste1").removeAttribute('disabled');
 	document.getElementById("kaste2").setAttribute('disabled', 'disabled');
 	document.getElementById("lagre1").setAttribute('disabled', 'disabled');
 	document.getElementById("lagre2").setAttribute('disabled', 'disabled');	
@@ -74,40 +92,50 @@ function nullstill(){
 </script>
 </head>
 <body onload="nullstill()">
-<table align=center border="2">
+<table align=center border="0">
 	<tr>
 		<td align=center>
+			<fieldset>
+				<Legend>Player 1</Legend>
 				<button id="kaste1" style="height:70px; width:70px" type="button" align=center onclick="kaste(1)">Kast</button>
 				<button id="lagre1" style="height:70px; width:70px" type="button" align=center onclick="lagre(1)">Lagre</button>
+			</fieldset>
 		</td>
 		<td>
-<table align=center border="2">
+<table align=center border="0">
 	<tr>
 		<td>
 		<input type="text" id="total1" size="3" value=" ">
+			<label for="total1">Total</label><br>
 		</td>
 		<td align=center>
 		<button style="height:70px; width:70px" type="button" align=center onclick="nullstill()">Nullstill</button>
 		</td>
 		<td>
 		<input type="text" id="total2" size="3" value=" ">
+			<label for="total2">Total</label><br>
 		</td>
 	</tr>
 	<tr>
 		<td>
 		<input type="text" id="runde1" size="3" value=" ">
+			<label for="runde1">Runde</label><br>
 		</td>
 		<td>
 		</td>
 		<td>
 		<input type="text" id="runde2" size="3" value=" ">
+			<label for="runde2">Runde</label><br>
 		</td>
 	</tr>
 	<tr>
 		<td>
 		</td>
 		<td>
-		<input type="text" id="terning" size="3" value=" ">
+			<fieldset>
+				<Legend>Terning</Legend>
+				<input type="text" id="terning" size="3" value=" ">
+			</fieldset>
 		</td>
 		<td>
 		</td>
@@ -115,8 +143,11 @@ function nullstill(){
 </table>
 		</td>
 		<td align=center>
+			<fieldset>
+				<Legend>Player 2</Legend>
 				<button id="kaste2" style="height:70px; width:70px" type="button" align=center onclick="kaste(2)">Kast</button>
 				<button id="lagre2" style="height:70px; width:70px" type="button" align=center onclick="lagre(2)">Lagre</button>
+			</fieldset>
 		</td>
 	</tr>
 </table>
