@@ -15,9 +15,11 @@ function kaste(spiller){
 
 	
 
-		r2= document.getElementById("runde2").value;
-if ( spiller == 2 )		document.getElementById("runde2").value = +kast + +r2;
-
+	r2= document.getElementById("runde2").value;
+	if ( spiller == 2 ){
+		document.getElementById("runde2").value = +kast + +r2;
+		document.getElementById("lagre2").removeAttribute('disabled');
+	}
 	
 }
 
