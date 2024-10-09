@@ -1,58 +1,104 @@
 <html>
 <head>
 <script>
-function kraftigereslag(spiller){
-	kast=Math.floor(Math.random() * 6) + 1 ;
+function kaste(spiller){
+	kast=Math.floor(Math.random() * 6) + 1;
 	document.getElementById("terning").value = kast;
+
+	if (kast == 1){
+		alert("Auda! Du fikk ener!");
+	}
+		
+
+	r1= document.getElementById("runde1").value;
+	if ( spiller == 1 ) {
+		document.getElementById("runde1").value = +kast + +r1;
+		document.getElementById("lagre1").removeAttribute('disabled');
+	}
+
 	
 
-		s1= document.getElementById("skade1").value;
-if ( spiller == 1 )		document.getElementById("skade1").value = +kast + +s1;
-
-	
-
-		s2= document.getElementById("skade2").value;
-if ( spiller == 2 )		document.getElementById("skade2").value = +kast + +s2;
-
+	r2= document.getElementById("runde2").value;
+	if ( spiller == 2 ){
+		document.getElementById("runde2").value = +kast + +r2;
+		document.getElementById("lagre2").removeAttribute('disabled');
+	}
 	
 }
+
+function lagre(spiller){
+	l1= document.getElementById("runde1").value;
+	t1= document.getElementById("total1").value;
+	if ( spiller == 1 ){
+		document.getElementById("total1").value = +t1 + +l1;
+		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
+		document.getElementById("lagre1").setAttribute('disabled', 'disabled');
+		document.getElementById("kaste2").removeAttribute('disabled');
+	}
+
+	
+
+	l2= document.getElementById("runde2").value;
+	t2= document.getElementById("total2").value;
+	if ( spiller == 2 ){
+		document.getElementById("total2").value = +t2 + +l2;
+		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
+		document.getElementById("lagre2").setAttribute('disabled', 'disabled');
+		document.getElementById("kaste1").removeAttribute('disabled');
+	}
+}
+
+function nullstill(){
+
+	//alert("Nullstiller!");
+	
+	document.getElementById("total1").value = 0;
+	document.getElementById("total2").value = 0;
+	document.getElementById("runde1").value = 0;
+	document.getElementById("runde2").value = 0;
+	document.getElementById("terning").value = 0;
+	//document.getElementById("kaste1").setAttribute('disabled', 'disabled');
+	document.getElementById("kaste2").setAttribute('disabled', 'disabled');
+	document.getElementById("lagre1").setAttribute('disabled', 'disabled');
+	document.getElementById("lagre2").setAttribute('disabled', 'disabled');	
+}
+
 </script>
 </head>
-<body>
-<table align=center border="0">
+<body onload="nullstill()">
+<table align=center border="2">
 	<tr>
 		<td align=center>
-			<img src="skann0001.jpg">
-				<button style="height:70px; width:70px" type="button" align=center onclick="kraftigereslag(1)">Kraftigere slag</button>
-				<button style="height:70px; width:70px" type="button" align=center onclick="slag()">Slå</button>
+				<button id="kaste1" style="height:70px; width:70px" type="button" align=center onclick="kaste(1)">Kast</button>
+				<button id="lagre1" style="height:70px; width:70px" type="button" align=center onclick="lagre(1)">Lagre</button>
 		</td>
 		<td>
-<table align=center border="0">
+<table align=center border="2">
 	<tr>
-		<td style="background-image:url(skann0003.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=right>
-		<font size="72" >87</font>
+		<td>
+		<input type="text" id="total1" size="3" value=" ">
 		</td>
 		<td align=center>
-		<button style="height:70px; width:70px">Start spill!"</button>
-		</td>
-		<td style="background-image:url(skann0003.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=right>
-		<font size="156">100</font>
-		</td>
-	</tr>
-	<tr>
-		<td style="background-image:url(skann0006.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=right>
-		<input type="text" id="skade1" size="3" value=" ">
+		<button style="height:70px; width:70px" type="button" align=center onclick="nullstill()">Nullstill</button>
 		</td>
 		<td>
-		</td>
-		<td style="background-image:url(skann0006.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=right>
-		<input type="text" id="skade2" size="3" value=" ">
+		<input type="text" id="total2" size="3" value=" ">
 		</td>
 	</tr>
 	<tr>
 		<td>
+		<input type="text" id="runde1" size="3" value=" ">
 		</td>
-		<td style="background-image:url(skann0005.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=center>
+		<td>
+		</td>
+		<td>
+		<input type="text" id="runde2" size="3" value=" ">
+		</td>
+	</tr>
+	<tr>
+		<td>
+		</td>
+		<td>
 		<input type="text" id="terning" size="3" value=" ">
 		</td>
 		<td>
@@ -61,9 +107,8 @@ if ( spiller == 2 )		document.getElementById("skade2").value = +kast + +s2;
 </table>
 		</td>
 		<td align=center>
-			<img src="skann0002.jpg">
-				<button style="height:70px; width:70px" type="button" align=center onclick="kraftigereslag(2)">Kraftigere slag</button>
-				<button style="height:70px; width:70px" type="button" align=center onclick="slag()">Slå</button>
+				<button id="kaste2" style="height:70px; width:70px" type="button" align=center onclick="kaste(2)">Kast</button>
+				<button id="lagre2" style="height:70px; width:70px" type="button" align=center onclick="lagre(2)">Lagre</button>
 		</td>
 	</tr>
 </table>
