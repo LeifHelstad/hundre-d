@@ -20,18 +20,20 @@ function kaste(spiller){
 		document.getElementById("runde2").value = 0;
 		document.getElementById("kaste1").removeAttribute('disabled');
 		}
-	}
+	} else {
 		
-	r1= document.getElementById("runde1").value;
-	if ( spiller == 1 ) {
-		document.getElementById("runde1").value = +kast + +r1;
-		if (kast > 1) document.getElementById("lagre1").removeAttribute('disabled');
-	}	
+		r1= document.getElementById("runde1").value;
+		if ( spiller == 1 ) {
+			document.getElementById("runde1").value = +kast + +r1;
+			if (kast > 1) document.getElementById("lagre1").removeAttribute('disabled');
+		}	
 
-	r2= document.getElementById("runde2").value;
-	if ( spiller == 2 ){
-		document.getElementById("runde2").value = +kast + +r2;
-		if (kast > 1) document.getElementById("lagre2").removeAttribute('disabled');
+		r2= document.getElementById("runde2").value;
+		if ( spiller == 2 ){
+			document.getElementById("runde2").value = +kast + +r2;
+			if (kast > 1) document.getElementById("lagre2").removeAttribute('disabled');
+		}
+
 	}
 
 	sum1 = +document.getElementById("runde1").value + +document.getElementById("total1").value;
