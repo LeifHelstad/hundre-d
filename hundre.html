@@ -6,7 +6,20 @@ function kaste(spiller){
 	document.getElementById("terning").value = kast;
 
 	if (kast == 1){
-		alert("Auda! Du fikk ener!");
+		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
+		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
+		document.getElementById("lagre1").setAttribute('disabled', 'disabled');
+		document.getElementById("lagre2").setAttribute('disabled', 'disabled');	
+		
+		if ( spiller == 1 ) {
+		document.getElementById("runde1").value = 0;
+		document.getElementById("kaste2").removeAttribute('disabled');
+		}
+		
+		if ( spiller == 2 ) {
+		document.getElementById("runde2").value = 0;
+		document.getElementById("kaste1").removeAttribute('disabled');
+		}
 	}
 		
 	r1= document.getElementById("runde1").value;
