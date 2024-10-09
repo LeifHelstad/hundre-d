@@ -6,8 +6,11 @@ function kaste(spiller){
 	document.getElementById("terning").value = kast;
 	
 
-		r1= document.getElementById("runde1").value;
-if ( spiller == 1 )		document.getElementById("runde1").value = +kast + +r1;
+	r1= document.getElementById("runde1").value;
+	if ( spiller == 1 ) {
+		document.getElementById("runde1").value = +kast + +r1;
+		document.getElementById("lagre1").removeAttribute('disabled');
+	}
 
 	
 
