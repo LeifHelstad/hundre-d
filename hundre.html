@@ -32,7 +32,21 @@ function kaste(spiller){
 	if ( spiller == 2 ){
 		document.getElementById("runde2").value = +kast + +r2;
 		if (kast > 1)document.getElementById("lagre2").removeAttribute('disabled');
-	}	
+	}
+
+	sum1 = document.getElementById("runde1").value + document.getElementById("total1").value;
+	
+	if (sum1 > 20){
+		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
+		Alert("Spiller 1 har vunnet! Total pluss runde er " + sum1);
+	}
+
+	sum2 = document.getElementById("runde1").value + document.getElementById("total1").value;
+	
+	if (sum2 > 20){
+		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
+		Alert("Spiller 2 har vunnet! Total pluss runde er " + sum2);
+	}
 }
 
 function lagre(spiller){
@@ -67,7 +81,7 @@ function nullstill(){
 	document.getElementById("runde1").value = 0;
 	document.getElementById("runde2").value = 0;
 	document.getElementById("terning").value = 0;
-	//document.getElementById("kaste1").setAttribute('disabled', 'disabled');
+	document.getElementById("kaste1").removeAttribute('disabled');
 	document.getElementById("kaste2").setAttribute('disabled', 'disabled');
 	document.getElementById("lagre1").setAttribute('disabled', 'disabled');
 	document.getElementById("lagre2").setAttribute('disabled', 'disabled');	
