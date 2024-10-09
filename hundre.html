@@ -39,7 +39,8 @@ function kaste(spiller){
 	
 	if (sum1 >= 20){
 		alert('Spiller 1 har vunnet! Total pluss runde er');
-		document.getElementById("kaste1").setAttribute('disabled', 'disabled');		
+		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
+		document.getElementById("lagre1").setAttribute('disabled', 'disabled');	
 	}
 
 	sum2 = +document.getElementById("runde2").value + +document.getElementById("total2").value;
@@ -47,7 +48,8 @@ function kaste(spiller){
 	
 	if (sum2 >= 20){
 		alert('Spiller 2 har vunnet! Total pluss runde er');
-		document.getElementById("kaste2").setAttribute('disabled', 'disabled');	
+		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
+		document.getElementById("lagre2").setAttribute('disabled', 'disabled');
 	}
 }
 
