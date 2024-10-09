@@ -1,0 +1,71 @@
+<html>
+<head>
+<script>
+function kraftigereslag(spiller){
+	kast=Math.floor(Math.random() * 6) + 1 ;
+	document.getElementById("terning").value = kast;
+	
+
+		s1= document.getElementById("skade1").value;
+if ( spiller == 1 )		document.getElementById("skade1").value = +kast + +s1;
+
+	
+
+		s2= document.getElementById("skade2").value;
+if ( spiller == 2 )		document.getElementById("skade2").value = +kast + +s2;
+
+	
+}
+</script>
+</head>
+<body>
+<table align=center border="0">
+	<tr>
+		<td align=center>
+			<img src="skann0001.jpg">
+				<button style="height:70px; width:70px" type="button" align=center onclick="kraftigereslag(1)">Kraftigere slag</button>
+				<button style="height:70px; width:70px" type="button" align=center onclick="slag()">Slå</button>
+		</td>
+		<td>
+<table align=center border="0">
+	<tr>
+		<td style="background-image:url(skann0003.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=right>
+		<font size="72" >87</font>
+		</td>
+		<td align=center>
+		<button style="height:70px; width:70px">Start spill!"</button>
+		</td>
+		<td style="background-image:url(skann0003.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=right>
+		<font size="156">100</font>
+		</td>
+	</tr>
+	<tr>
+		<td style="background-image:url(skann0006.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=right>
+		<input type="text" id="skade1" size="3" value=" ">
+		</td>
+		<td>
+		</td>
+		<td style="background-image:url(skann0006.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=right>
+		<input type="text" id="skade2" size="3" value=" ">
+		</td>
+	</tr>
+	<tr>
+		<td>
+		</td>
+		<td style="background-image:url(skann0005.jpg);background-repeat:no-repeat;background-size:200px 200px;   width: 200px; height: 200px;" align=center>
+		<input type="text" id="terning" size="3" value=" ">
+		</td>
+		<td>
+		</td>
+	</tr>	
+</table>
+		</td>
+		<td align=center>
+			<img src="skann0002.jpg">
+				<button style="height:70px; width:70px" type="button" align=center onclick="kraftigereslag(2)">Kraftigere slag</button>
+				<button style="height:70px; width:70px" type="button" align=center onclick="slag()">Slå</button>
+		</td>
+	</tr>
+</table>
+<body>
+</html>
