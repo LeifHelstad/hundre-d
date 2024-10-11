@@ -1,6 +1,10 @@
 <html>
 <head>
 <script>
+function updatescore(player, pwin, ploose){
+		document.getElementById("scoreboard").value = document.getElementById("scoreboard").value + "Spiller " + player + " vinner med " + pwin + " mot " + ploose + "\n";
+}
+
 function kaste(spiller){
 	kast=Math.floor(Math.random() * 6) + 1;
 	document.getElementById("terning").value = kast;
@@ -37,19 +41,24 @@ function kaste(spiller){
 	}
 
 	sum1 = +document.getElementById("runde1").value + +document.getElementById("total1").value;
+	sum2 = +document.getElementById("runde2").value + +document.getElementById("total2").value;
+	
 	
 	if (sum1 >= 100){
 		alert('Spiller 1 har vunnet! Spart pluss Runde er ' + sum1);
 		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre1").setAttribute('disabled', 'disabled');	
+		
+		updatescore(1, sum1, sum2);
 	}
 
-	sum2 = +document.getElementById("runde2").value + +document.getElementById("total2").value;
 	
 	if (sum2 >= 100){
 		alert('Spiller 2 har vunnet! Spart pluss Runde er ' + sum2);
 		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre2").setAttribute('disabled', 'disabled');
+		
+		updatescore(2, sum2, sum1);
 	}
 }
 
@@ -119,9 +128,8 @@ function nullstill(){
 	</tr>
 	<tr>
 		<td>
-			<label for="runde1">Runde</label>
 		<input type="text" id="runde1" size="3" value=" ">
-			
+			<label for="runde1">Runde</label>
 		</td>
 		<td>
 		</td>
@@ -149,6 +157,17 @@ function nullstill(){
 				<Legend>Player 2</Legend>
 				<button id="kaste2" style="height:70px; width:70px" type="button" align=center onclick="kaste(2)">Kast</button>
 				<button id="lagre2" style="height:70px; width:70px" type="button" align=center onclick="lagre(2)">Spare</button>
+			</fieldset>
+		</td>
+	</tr>
+</table>
+
+<table align=center border="0">
+	<tr>
+		<td align=center>
+			<fieldset>
+				<Legend>Scoreboard</Legend>
+				<textarea id="scoreboard" rows="10" cols="50" READONLY></textarea>
 			</fieldset>
 		</td>
 	</tr>
