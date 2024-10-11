@@ -44,7 +44,7 @@ function kaste(spiller){
 	sum2 = +document.getElementById("runde2").value + +document.getElementById("total2").value;
 	
 	
-	if (sum1 >= 10){
+	if (sum1 >= 100){
 		alert('Spiller 1 har vunnet! Spart pluss Runde er ' + sum1);
 		document.getElementById("kaste1").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre1").setAttribute('disabled', 'disabled');	
@@ -53,7 +53,7 @@ function kaste(spiller){
 	}
 
 	
-	if (sum2 >= 10){
+	if (sum2 >= 100){
 		alert('Spiller 2 har vunnet! Spart pluss Runde er ' + sum2);
 		document.getElementById("kaste2").setAttribute('disabled', 'disabled');
 		document.getElementById("lagre2").setAttribute('disabled', 'disabled');
@@ -114,7 +114,7 @@ function nullstill(){
 <table align=center border="0">
 	<tr>
 		<td>
-			<label for="total1">Spart</label><br>
+			<label for="total1">Spart</label>
 		<input type="text" id="total1" size="3" value=" ">
 			
 		</td>
@@ -123,19 +123,19 @@ function nullstill(){
 		</td>
 		<td>
 		<input type="text" id="total2" size="3" value=" ">
-			<label for="total2">Spart</label><br>
+			<label for="total2">Spart</label>
 		</td>
 	</tr>
 	<tr>
 		<td>
 		<input type="text" id="runde1" size="3" value=" ">
-			<label for="runde1">Runde</label><br>
+			<label for="runde1">Runde</label>
 		</td>
 		<td>
 		</td>
 		<td>
 		<input type="text" id="runde2" size="3" value=" ">
-			<label for="runde2">Runde</label><br>
+			<label for="runde2">Runde</label>
 		</td>
 	</tr>
 	<tr>
